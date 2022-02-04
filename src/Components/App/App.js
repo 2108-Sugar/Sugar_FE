@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from '../Header/Header';
 
 class App extends Component {
   constructor() {
@@ -10,9 +11,7 @@ class App extends Component {
   render = () => {
     return (
       <main className='App'>
-        <div>
-          <h1>Sugar</h1>
-        </div>
+        <Header />
       </main>
     )
   }
