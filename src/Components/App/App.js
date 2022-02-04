@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <main className='App'>
         <div>
-          <p>boner</p>
+          <h1>Sugar</h1>
         </div>
       </main>
     )
