@@ -1,0 +1,12 @@
+.header-container {
+  background-color: #1DCDAA;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h1 {
+  margin-left: 5px;
+}
