@@ -1,9 +1,10 @@
 import React from 'react';
 import DashboardCard from '../DashboardCard/DashboardCard';
 
-const DashboardCardContainer = (requests) => {
+const DashboardCardContainer = ({requests}) => {
+  console.log(requests)
   return (
-    requests.map((request) => {
+    requests.map(request => {
       return (
         <DashboardCard
           lenderName={request.lender_name}

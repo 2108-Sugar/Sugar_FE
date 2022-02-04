@@ -6,6 +6,7 @@ import DashboardCardContainer from '../DashboardCardContainer/DashboardCardConta
 
 class App extends Component {
   constructor() {
+    console.log(data)
     super();
     this.state = {
       requests: [],
@@ -14,9 +15,7 @@ class App extends Component {
 
 
   componentDidMount = () => {
-    console.log(data)
-    this.setState({ requests: data })
-    console.log(this.state.requests)
+    this.setState({ requests: data });
   }
   
   render = () => {
