@@ -4,15 +4,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
     };
   }
   
-  render() {
+  render = () => {
     return (
-      <div>
-        <p>boner</p>
-      </div>
+      <main className='App'>
+        <div>
+          <p>boner</p>
+        </div>
+      </main>
     )
   }
 }
