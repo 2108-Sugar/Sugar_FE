@@ -1,0 +1,5 @@
+.request-title {
+  border: 3px solid pink;
+  display: flex;
+  justify-content: center
+}

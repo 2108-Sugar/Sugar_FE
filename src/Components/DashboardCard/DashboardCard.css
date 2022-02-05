@@ -1,0 +1,49 @@
+.request-card {
+  border: 3px solid green;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30vw;
+  height: 40vh;
+  margin: 5px;
+  min-width: 320px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  margin-top: 0;
+}
+
+.second-row {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.request-details {
+  overflow-y: scroll;
+  max-width: 100%;
+  max-height: 30%;
+  margin: 10px;
+}
+
+.loan-button {
+ margin: 10px;
+}
+
+@media screen and (max-width: 1320px) {
+  .request-card {
+    width: 40vw;
+    height: 45vh;
+  }
+}
+
+@media screen and (max-width: 890px) {
+.request-card {
+  width: 45vw;
+  height: 45vh;
+  } 
+}
+
