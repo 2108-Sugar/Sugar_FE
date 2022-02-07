@@ -11,35 +11,35 @@ const Footer = () => {
       <div className='foot-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
-            <h2>Contact Us</h2>
+            <h1>Contact Us</h1>
             <div className='name-columns'>
               <div className='left-names'>
                 <div className='contact-info'>
-                  <h4>Billy Frey</h4>
-                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/markus-rossio/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
-                  <a className='contact-icons' href={'https://github.com/ivonne-hernandez'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
+                  <h3>Billy Frey</h3>
+                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/william-frey/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
+                  <a className='contact-icons' href={'https://github.com/bfrey08'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
                 </div>
                 <div className='contact-info'>
-                  <h4>Christian Valesares</h4>
-                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/markus-rossio/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
-                  <a className='contact-icons' href={'https://github.com/Markus-Xavier'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
+                  <h3>Christian Valesares</h3>
+                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/christian-valesares/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
+                  <a className='contact-icons' href={'https://github.com/cvalesares'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
                 </div>
               </div>
                 <div className='contact-info'>
-                  <h4>David Tran</h4>
+                  <h3>David Tran</h3>
                   <a className='linked-in-icon' href={'https://www.linkedin.com/in/david-tran7/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
                   <a className='contact-icons' href={'https://github.com/isleofyou'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
                 </div>
               <div className='right-names'>
                 <div className='contact-info'>
-                  <h4>Didi Dodson</h4>
-                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/markus-rossio/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
-                  <a className='contact-icons' href={'https://github.com/Markus-Xavier'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
+                  <h3>Didi Dodson</h3>
+                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/didi-dodson'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
+                  <a className='contact-icons' href={'https://github.com/DidiDodson'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
                 </div>
                 <div className='contact-info'>
-                  <h4>Tony Hsu</h4>
-                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/markus-rossio/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
-                  <a className='contact-icons' href={'https://github.com/Markus-Xavier'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
+                  <h3>Tony Hsu</h3>
+                  <a className='linked-in-icon' href={'https://www.linkedin.com/in/tonydhsu/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
+                  <a className='contact-icons' href={'https://github.com/tonydhsu'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
                 </div>
               </div>           
             </div>
