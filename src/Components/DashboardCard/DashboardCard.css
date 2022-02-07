@@ -18,8 +18,6 @@ p {
 /*. Post it format*/
 
 .pin-img {
-  width: 90px;
-  height: 50px;
   align-self: center;
 }
 
@@ -40,7 +38,7 @@ p {
 }
 
 .request-card:nth-child(3n) {
-  background: #adbaf5;
+  background: #adbaf5; 
 }
 
 /*Post it note */
@@ -48,7 +46,6 @@ p {
 .request-card:hover {
   transform: scale(1.2);
   transition: .5s;
-
 }
 
 .top-row {
@@ -67,14 +64,12 @@ p {
 }
 
 .request-details {
-  /* border: 1px solid black; */
-  overflow-y: scroll;
+  overflow-y: auto;
   max-width: 100%;
   height: 40%;
   margin: 5px;
   font-size: 22px;
 }
-
 
 .name {
   font-size: 25px;
@@ -87,6 +82,7 @@ p {
 
 .date-needed {
   font-size: 20px;
+  background-color: rgb(241, 241, 82);
 }
 
 .loan-button {
@@ -103,24 +99,23 @@ p {
   text-align: center;
 }
 
-
 .loan-button:hover {
-  background-color: #8ffae4;
+  background-color: #272F51;
   box-shadow: 0 0 5px #272F51;
+  color: white;
 }
-
 
 @media screen and (max-width: 1320px) {
   .request-card {
-    width: 40vw;
-    height: 45vh;
+    width: 350px;
+    height: 350px;
   }
 }
 
 @media screen and (max-width: 890px) {
 .request-card {
-  width: 45vw;
-  height: 45vh;
+  width: 350px;
+  height: 350px;
   } 
 }
 
