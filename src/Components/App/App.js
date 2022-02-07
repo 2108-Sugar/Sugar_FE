@@ -23,6 +23,7 @@ class App extends Component {
       <main className='App'>
         <Header />
         <h2 className='request-title'>Requests from Frey Apartments</h2>
+        <hr/>
         <DashboardCardContainer requests={this.state.requests} />
       </main>
     )

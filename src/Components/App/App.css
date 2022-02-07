@@ -1,5 +1,19 @@
+* {
+font-family: 'Tajawal', sans-serif;
+}
+
+main {
+  background-color: #e1fbf6;
+}
+
 .request-title {
-  border: 3px solid pink;
+  font-size: 40px;
   display: flex;
   justify-content: center
+}
+
+hr {
+  margin-bottom: 40px;
+  max-width: 700px;
+  color: #272F51;
 }

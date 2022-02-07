@@ -1,20 +1,22 @@
 import React from 'react';
 import './DashboardCard.css';
+import pin from '../pin2.png'
 
 const DashboardCard = ({ lenderName, category, itemName, requestDetails, borrowDate, post_date }) => {
   return (
     <div className='request-card'>
+      <img className='pin-img' src={pin} alt='pin' />
       <div className='top-row'>
-        <p>{lenderName}</p>
-        <p>{post_date}</p>
+        <p className='name'>{lenderName}</p>
+        <p>Requested on:  {post_date}</p>
       </div>
       <div className='second-row'>
-        <p>{itemName}</p>
-        <p>{borrowDate}</p>
+        <p className='item-name'>{itemName}</p>
+        <p className='date-needed'>Needed on: {borrowDate}</p>
       </div>
         <p className='request-details'>{requestDetails}</p>
-      <div className='loan-button'>
-        <button>Loan Item</button>
+      <div>
+        <button className='loan-button'>Loan Item</button>
       </div>
     </div>
     )
