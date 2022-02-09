@@ -15,25 +15,48 @@ class App extends Component {
     this.state = {
       requests: [],
       communityPage: false,
-      loading: true
+      loading: true,
+      communityRequests: [],
+      userRequests: [],
+      userLoaned: []
     };
   }
 
+  
   togglePage = () => {
     this.setState({ communityPage: !this.state.communityPage })
   }
-
-
+  
+  
   componentDidMount = () => { 
     const allRequests = fetchApi()
     .then(data => {
       const fetchedReq = data
-      console.log(data, 'data')
       this.setState({ requests: fetchedReq, loading: false})
-      console.log(this.state.requests, 'requests')
+      this.sortCommunityRequests()
+      this.sortUserRequests()
+      this.sortLoaned()
     })
   }
   
+  sortCommunityRequests = () => {
+    const communityReq = this.state.requests.data.filter(request => request.attributes.requested_by_id !== 1)
+    this.setState({communityRequests: communityReq})
+    console.log(this.state.communityRequests, 'communityreq')
+  }
+
+  sortUserRequests = () => {
+    const userReq = this.state.requests.data.filter(request => request.attributes.requested_by_id === 1)
+    this.setState({userRequests: userReq})
+    console.log(this.state.userRequests, 'userReqeust')
+  }
+
+  sortLoaned = () => {
+    const userLoan = this.state.requests.data.filter(request => request.attributes.lender_id === 1)
+    this.setState({userLoaned: userLoan})
+    console.log(this.state.userLoaned, 'loaned')
+  }
+
   render = () => {
     return (
       <main className='App'>
