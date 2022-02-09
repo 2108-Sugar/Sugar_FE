@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import data from '../SampleData/sample-data';
 import DashboardCardContainer from '../DashboardCardContainer/DashboardCardContainer';
+
 import './App.css'
 import { fetchApi } from '../Api/ApiCalls'
 
 // console.log(fetchApi)
+
+import Footer from '../Footer/Footer';
+
 
 class App extends Component {
   constructor() {
@@ -45,6 +49,8 @@ class App extends Component {
         <h2 className='request-title'>Requests from Frey Apartments</h2>
         <hr/>
         {!this.state.loading && <DashboardCardContainer requests={this.state.requests} />}
+
+        <Footer />
       </main>
     )
   }
