@@ -1,19 +1,20 @@
 import React from 'react';
 import DashboardCard from '../DashboardCard/DashboardCard';
 import './DashboardCardContainer.css'
+import names from '../SampleData/Names'
 
 const DashboardCardContainer = ({requests}) => {
   return (
     <div className='dashboard-container'>
-      {requests.map(request => {
+      {requests.data.map(request => {
         return (
           <DashboardCard
-            post_date={request.post_date}
-            lenderName={request.lender_name}
-            category={request.category}
-            itemName={request.item_name}
-            requestDetails={request.request_details}
-            borrowDate={request.borrow_date}
+            post_date={request.attributes.created_at}
+            lenderName={names[request.attributes.requested_by_id]}
+            category={request.attributes.item_category}
+            itemName={request.attributes.name}
+            requestDetails={request.attributes.details}
+            borrowDate={request.attributes.borrow_date}
             />
         )
       })}
