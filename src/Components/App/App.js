@@ -14,7 +14,13 @@ class App extends Component {
     super();
     this.state = {
       requests: [],
+      communityPage: true,
     };
+  }
+
+  togglePage = () => {
+    this.setState({ communityPage: !this.state.communityPage })
+    console.log(this.state.communityPage)
   }
 
 
@@ -25,7 +31,7 @@ class App extends Component {
   render = () => {
     return (
       <main className='App'>
-        <Header />
+        <Header communityPage={this.state.communityPage} togglePage={this.togglePage}/>
         <h2 className='request-title'>Requests from Frey Apartments</h2>
         <hr/>
         <DashboardCardContainer requests={this.state.requests} />

@@ -3,7 +3,6 @@ import DashboardCard from '../DashboardCard/DashboardCard';
 import './DashboardCardContainer.css'
 
 const DashboardCardContainer = ({requests}) => {
-  console.log(requests)
   return (
     <div className='dashboard-container'>
       {requests.map(request => {
