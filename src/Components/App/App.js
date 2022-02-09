@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import data from '../SampleData/sample-data';
 import DashboardCardContainer from '../DashboardCardContainer/DashboardCardContainer';
-
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
+import MyStuffContainer from '../MyStuffContainer/MyStuffContainer';
 
 import Footer from '../Footer/Footer';
 
@@ -32,9 +33,22 @@ class App extends Component {
     return (
       <main className='App'>
         <Header communityPage={this.state.communityPage} togglePage={this.togglePage}/>
-        <h2 className='request-title'>Requests from Frey Apartments</h2>
-        <hr/>
-        <DashboardCardContainer requests={this.state.requests} />
+        <Routes>
+          <Route path='/' element={
+            <div className='community-page'>
+              <h2 className='request-title'>Requests from Frey Apartments</h2>
+              <DashboardCardContainer requests={this.state.requests} />
+            </div>
+          }
+          />
+          <Route path='/my-stuff' element={
+            <div className='requests-page'>
+              <h2 className='request-title'>My Stuff</h2>
+              <MyStuffContainer />
+            </div>
+          }
+          />
+        </Routes>
         <Footer />
       </main>
     )

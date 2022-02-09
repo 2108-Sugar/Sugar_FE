@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
@@ -8,14 +8,14 @@ const Header = ({ communityPage, togglePage }) => {
     <div className='header-container'>
       <h1>Sugar</h1>
       <ul className='nav-container'>
-      {communityPage ? <li className='community'>
+      {communityPage ? <li className='nav-button'>
           <Link to='/'>
             <span onClick={togglePage}>My Stuff</span>
           </Link>
         </li>
         :
-        <li className='community'>
-          <Link to='/'>
+        <li className='nav-button'>
+          <Link to='/my-stuff'>
             <span onClick={togglePage}>Community Page</span>
           </Link>
         </li>}
