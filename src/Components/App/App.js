@@ -15,7 +15,7 @@ class App extends Component {
     super();
     this.state = {
       requests: [],
-      communityPage: true,
+      communityPage: false,
     };
   }
 

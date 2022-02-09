@@ -1,22 +1,22 @@
 import React from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = ({ communityPage, togglePage }) => {
-
+  let navigate = useNavigate();
   return (
     <div className='header-container'>
-      <h1>Sugar</h1>
+      <h1 onClick={() => navigate('/')}>Sugar</h1>
       <ul className='nav-container'>
       {communityPage ? <li className='nav-button'>
           <Link to='/'>
-            <span onClick={togglePage}>My Stuff</span>
+            <span onClick={togglePage}>Community Page</span>
           </Link>
         </li>
         :
         <li className='nav-button'>
           <Link to='/my-stuff'>
-            <span onClick={togglePage}>Community Page</span>
+            <span onClick={togglePage}>My Stuff</span>
           </Link>
         </li>}
       </ul>
