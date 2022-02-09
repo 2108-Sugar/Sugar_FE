@@ -10,7 +10,7 @@ const Header = ({ communityPage, togglePage }) => {
       <ul className='nav-container'>
       {communityPage ? <li className='nav-button'>
           <Link to='/'>
-            <span onClick={togglePage}>Community Page</span>
+            <span onClick={togglePage}>Community Board</span>
           </Link>
         </li>
         :

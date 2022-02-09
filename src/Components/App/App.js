@@ -21,7 +21,6 @@ class App extends Component {
 
   togglePage = () => {
     this.setState({ communityPage: !this.state.communityPage })
-    console.log(this.state.communityPage)
   }
 
 
