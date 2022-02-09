@@ -51,9 +51,9 @@ const Footer = () => {
           <small className='copyright'>Sugar © 2022</small>
         </div>
       </section>
-      <section class='social-media'>
-        <div class='social-media-wrap'>
-          <div class='footer-logo'>
+      <section className='social-media'>
+        <div className='social-media-wrap'>
+          <div className='footer-logo'>
           </div>
         </div>
       </section>
