@@ -3,8 +3,8 @@ const names = {
   2: 'Tony',
   3: 'Billy',
   5: 'Christian',
-  6: 'Didi',
-  7: 'Bob'
+  6: 'Rick',
+  7: 'Didi'
 }
 
 export default names
