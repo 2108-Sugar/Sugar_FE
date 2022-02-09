@@ -21,7 +21,6 @@ const Header = ({ communityPage, togglePage }) => {
         </li>}
       </ul>
     </div>
-
     )
 }
 

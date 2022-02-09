@@ -19,8 +19,9 @@ h1 {
   margin-right: 5rem;
   color: #272F51;
   font-size: 2rem;
-  list-style-type: none;
-  text-decoration: none;
+  list-style-type: none !important;
+  border-style: #272F51 solid 1px;
+  text-decoration: none !important;
 }
 
 
