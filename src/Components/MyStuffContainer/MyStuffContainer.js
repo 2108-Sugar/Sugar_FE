@@ -7,7 +7,7 @@ const MyStuffContainer = () => {
   return (
     <div className='column-container'>
       <div className='loaned-items-container'>
-
+        
       </div>
       <div className='requested-items-container'>
 
