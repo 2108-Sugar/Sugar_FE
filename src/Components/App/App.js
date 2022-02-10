@@ -72,7 +72,7 @@ class App extends Component {
           <Route path='/my-stuff' element={
             <div className='requests-page'>
               <h2 className='request-title'>My Stuff</h2>
-              <MyStuffContainer />
+              <MyStuffContainer userRequests={this.state.userRequests} userLoaned={this.state.userLoaned}/>
             </div>
           }
           />
