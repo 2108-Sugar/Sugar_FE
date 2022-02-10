@@ -1,10 +1,10 @@
 .request-card {
   border: 1px solid #272F51;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
-  width: 350px;
-  height: 350px;
+  width: 375px;
+  height: 375px;
   margin: 20px;
   min-width: 320px;
   background: #a7f5e5;
@@ -15,10 +15,20 @@ p {
   margin: 0;
 }
 
-/*. Post it format*/
+.header-img {
+  margin:0;
+}
 
 .pin-img {
-  align-self: center;
+  width: 90px;
+  height: 50px;
+  position: absolute;
+  margin: 0 0 1000px 60px;
+}
+
+.category-icon {
+  width: 50px;
+  margin: 20px 0 0 20px;
 }
 
 .request-card:nth-child(even) {
@@ -34,14 +44,12 @@ p {
 }
 
 .request-card:nth-child(even) {
-  background: #a5f9fc;
+  background: #47f1f7;
 }
 
 .request-card:nth-child(3n) {
   background: #adbaf5; 
 }
-
-/*Post it note */
 
 .request-card:hover {
   transform: scale(1.2);
@@ -49,50 +57,82 @@ p {
 }
 
 .top-row {
+  height: 20%;
   display: flex;
   justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin: 13px 20px 10px 10px;
+  margin: 13px 20px 0 10px;
 }
 
 .second-row {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
+  height: 15%;
+  justify-content: center;
+  align-items: center
+}
 
+
+.details-section {
+  height: 30%;
+  margin: 5px;
+  
 }
 
 .request-details {
+  display: flex;
+  justify-content: center;
   overflow-y: auto;
-  max-width: 100%;
-  height: 40%;
+  width: 100%;
+  height: 100%;
   margin: 5px;
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .name {
   font-size: 25px;
 }
 
-.item-name {
+
+.item-needed {
   font-size: 25px;
+  margin-left: 5px;
+}
+
+.item-name {
+  font-size: 30px;
   font-weight: bold;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.date-needed-row {
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .date-needed {
-  font-size: 20px;
+  width: 60%;
+  font-size: 25px;
   background-color: rgb(241, 241, 82);
 }
 
+.request-on-date {
+  font-size: 17px;
+}
+
+.loan-button-section {
+  display: flex;
+  justify-content: center;
+}
+
 .loan-button {
-  width: 100px;
-  height: 25px;
-  margin-bottom: 20px;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 30px;
   border: none;
   background-color: #1DCDAA;
-  margin-left: 10px;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;

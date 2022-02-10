@@ -2,6 +2,7 @@ import React from 'react';
 import DashboardCard from '../DashboardCard/DashboardCard';
 import './DashboardCardContainer.css'
 import names from '../SampleData/Names'
+import catIcon from '../SampleData/Category'
 
 const DashboardCardContainer = ({requests}) => {
   return (
@@ -10,8 +11,8 @@ const DashboardCardContainer = ({requests}) => {
         return (
           <DashboardCard
             post_date={request.attributes.created_at}
-            lenderName={names[request.attributes.requested_by_id]}
-            category={request.attributes.item_category}
+            requesterName={names[request.attributes.requested_by_id]}
+            category={catIcon[request.attributes.item_category]}
             itemName={request.attributes.name}
             requestDetails={request.attributes.details}
             borrowDate={request.attributes.borrow_date}
