@@ -20,4 +20,4 @@ workflows:
               branches:
                 only:
                   - main
-                  -feature/circle-ci
+                  - feature/circle-ci
