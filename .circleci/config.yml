@@ -18,5 +18,4 @@ workflows:
             - cypress/run
           filters:
               branches:
-                only:
-                  - main
+                
