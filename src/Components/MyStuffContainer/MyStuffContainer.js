@@ -4,6 +4,7 @@ import LoanCards from '../LoanCards/LoanCards';
 import BorrowedCards from '../BorrowedCards/BorrowedCards';
 import names from '../SampleData/Names';
 
+
 const MyStuffContainer = ({ userLoaned, userRequests }) => {
   return (
     <div className='column-container'>
