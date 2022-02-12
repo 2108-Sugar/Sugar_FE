@@ -1,3 +1,17 @@
 .loan-card {
   border: 3px solid blue;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 400px;
+  height: 200px;
+  justify-items: center;
+}
+
+.top-row {
+  margin: 10px;
+}
+
+.loan-to-name {
+  font-size: 23px;
 }
