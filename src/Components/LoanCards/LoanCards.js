@@ -5,7 +5,7 @@ const LoanCards = ({ borrower, borrowDate, itemName, returnDate}) => {
   return (
     <div className='loan-card'>
       <div className='top-row'>
-        <p>Loaned to {borrower}</p>
+        <p className='loan-to-name'>Loaned to: {borrower}</p>
         <p>Loaned on {borrowDate}</p>
       </div>
       <div className='second-row'>
