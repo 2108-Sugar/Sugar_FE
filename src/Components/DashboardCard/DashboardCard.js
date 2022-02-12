@@ -1,21 +1,31 @@
 import React from 'react';
 import './DashboardCard.css';
-import pin from '../pin2.png'
+import pin from '../Images/pin2.png'
+import tools from '../Images/tools-icon.png'
 
-const DashboardCard = ({ lenderName, category, itemName, requestDetails, borrowDate, post_date }) => {
+const DashboardCard = ({ requesterName, category, itemName, requestDetails, borrowDate, post_date }) => {
+
   return (
     <div className='request-card'>
-      <img className='pin-img' src={pin} alt='pin' width='90px' height='50px' />
+      <div className='header-img'>
+        <img className='category-icon' src={category} alt='category icon' />
+        <img className='pin-img' src={pin} alt='pin' />
+      </div>
       <div className='top-row'>
-        <p className='name'>{lenderName}</p>
-        <p>Requested on:  {post_date}</p>
+        <p className='name'>{requesterName}</p>
+        <p className='request-on-date'>Requested on:  {post_date}</p>
       </div>
       <div className='second-row'>
+        <p className='item-needed'>Item needed:</p>
         <p className='item-name'>{itemName}</p>
+      </div>
+      <div className='date-needed-row'>
         <p className='date-needed'>Needed on: {borrowDate}</p>
       </div>
+      <div className='details-section'>
         <p className='request-details'>{requestDetails}</p>
-      <div>
+      </div>
+      <div className='loan-button-section'>
         <button className='loan-button'>Loan Item</button>
       </div>
     </div>
