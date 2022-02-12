@@ -1,4 +1,5 @@
 import React from 'react';
+import './LoanCards.css'
 
 const LoanCards = ({ borrower, borrowDate, itemName, returnDate}) => {
   return (

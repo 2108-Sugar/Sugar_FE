@@ -1,0 +1,6 @@
+.column-container {
+  border: 3px solid green;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+}

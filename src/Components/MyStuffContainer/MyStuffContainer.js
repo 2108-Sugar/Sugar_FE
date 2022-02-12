@@ -24,8 +24,8 @@ const MyStuffContainer = ({ userLoaned, userRequests }) => {
         {userRequests.map((request) => {
           return (
             <BorrowedCards 
-              loaner={request.attributes.lender_id || null}
-              itemName={request.attributes.name}
+              loaner={names[request.attributes.lender_id || null]}
+              itemName={names[request.attributes.name]}
               borrowDate={request.attributes.borrow_date || null}
               returnDate={request.attributes.return_date}
               createdAt={request.attributes.createdAt}
