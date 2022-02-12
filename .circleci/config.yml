@@ -13,10 +13,10 @@ workflows:
               branches:
                 only:
                   - main
-      # - heroku/deploy-via-git:
-      #     requires:
-      #       - cypress/run
-      #     filters:
-      #         branches:
-      #           only:
-      #             - main
+      - heroku/deploy-via-git:
+          requires:
+            - cypress/run
+          filters:
+              branches:
+                only:
+                  - main
