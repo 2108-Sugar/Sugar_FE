@@ -9,6 +9,7 @@ const MyStuffContainer = ({ userLoaned, userRequests }) => {
   return (
     <div className='column-container'>
       <div className='loaned-items-container'>
+        <p className='loaned-items-title'>Loaned Items</p>
         {userLoaned.map(loan => {
           return (
             <LoanCards 
@@ -21,11 +22,12 @@ const MyStuffContainer = ({ userLoaned, userRequests }) => {
         })}
       </div>
       <div className='borrowed-items-container'>
+        <p className='borrowed-items-title'>Borrowed Items</p>
         {userRequests.map((request) => {
           return (
             <BorrowedCards 
               loaner={names[request.attributes.lender_id || null]}
-              itemName={names[request.attributes.name]}
+              itemName={request.attributes.name}
               borrowDate={request.attributes.borrow_date || null}
               returnDate={request.attributes.return_date}
               createdAt={request.attributes.createdAt}

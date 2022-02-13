@@ -24,4 +24,7 @@ h1 {
   text-decoration: none !important;
 }
 
+.sugar-title:hover {
+  cursor: pointer;
+}
 
