@@ -1,3 +1,26 @@
 .borrow-card {
-  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 350px;
+  height: 200px;
+  background-color: #A9F8FB;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.borrow-item-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.borrow-from {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.borrow-on-date {
+  font-size: 20px;
+  margin: 10px;
 }

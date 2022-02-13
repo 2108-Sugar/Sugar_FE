@@ -1,17 +1,68 @@
 .loan-card {
-  border: 3px solid blue;
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  width: 400px;
+  margin: 20px;
+  width: 350px;
   height: 200px;
-  justify-items: center;
+  background-color: #7dfbe1;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+
 .top-row {
-  margin: 10px;
+  /* margin: 10px; */
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  width: 80%;
+    align-items: center;
+
+}
+
+.second-row {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  width: 80%;
+  margin: 0;
 }
 
 .loan-to-name {
-  font-size: 23px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.loaned-on-date {
+  font-size: 20px;
+}
+
+.loaned-item-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.return-date {
+  font-size: 20px;
+  background-color: yellow;
+}
+
+
+.item-return-btn {
+  margin-top: 16px;
+ width: 150px;
+  height: 40px;
+  border: none;
+  background-color: #1DCDAA;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.item-return-btn:hover {
+  background-color: #272F51;
+  box-shadow: 0 0 5px #272F51;
+  color: white;
 }

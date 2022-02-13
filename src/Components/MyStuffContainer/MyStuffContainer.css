@@ -1,6 +1,21 @@
 .column-container {
   border: 3px solid green;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-gap: 20px;
+  grid-template-columns: repeat(2, 40%);
+  justify-items: center;
+  overflow-y: auto;
+}
+
+.loaned-items-title, .borrowed-items-title {
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: center;
+  margin-left: 60px;
+}
+
+@media screen and (max-width: 980px) {
+  .column-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

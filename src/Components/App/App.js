@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import data from '../SampleData/sample-data';
 import DashboardCardContainer from '../DashboardCardContainer/DashboardCardContainer';
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
@@ -29,7 +28,7 @@ class App extends Component {
   
   
   componentDidMount = () => { 
-    const allRequests = fetchApi()
+    fetchApi()
     .then(data => {
       const fetchedReq = data
       this.setState({ requests: fetchedReq, loading: false})
@@ -42,19 +41,16 @@ class App extends Component {
   sortCommunityRequests = () => {
     const communityReq = this.state.requests.data.filter(request => request.attributes.requested_by_id !== 1)
     this.setState({communityRequests: communityReq})
-    console.log(this.state.communityRequests, 'communityreq')
   }
 
   sortUserRequests = () => {
     const userReq = this.state.requests.data.filter(request => request.attributes.requested_by_id === 1)
     this.setState({userRequests: userReq})
-    console.log(this.state.userRequests, 'userReqeust')
   }
 
   sortLoaned = () => {
     const userLoan = this.state.requests.data.filter(request => request.attributes.lender_id === 1)
     this.setState({userLoaned: userLoan})
-    console.log(this.state.userLoaned, 'loaned')
   }
 
   render = () => {

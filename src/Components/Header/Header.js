@@ -6,7 +6,7 @@ const Header = ({ communityPage, togglePage }) => {
   let navigate = useNavigate();
   return (
     <div className='header-container'>
-      <h1 onClick={() => navigate('/')}>Sugar</h1>
+      <h1 className='sugar-title' onClick={() => navigate('/')}>Sugar</h1>
       <ul className='nav-container'>
       {communityPage ? <li className='nav-button'>
           <Link to='/'>
