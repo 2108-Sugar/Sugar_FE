@@ -8,4 +8,26 @@ const fetchApi = () => {
   })
 }
 
-export {fetchApi}
+const addNewRequest = (request) => {
+  let unparsedResponse;
+  return fetch('http://lendsugar.com/api/v1/users/1/communities/1/requests', {
+    method: 'POST',
+    body: JSON.stringify(request),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      unparsedResponse = response;
+      console.log(JSON.stringify(request))
+      return response.json();
+    })
+    .then(parsedResponse => {
+      if (!unparsedResponse.ok) {
+        throw new Error(`${unparsedResponse.status} ${parsedResponse.error}`);
+      }
+      return parsedResponse;
+    });
+}
+
+export {fetchApi, addNewRequest}

@@ -4,7 +4,7 @@ import DashboardCardContainer from '../DashboardCardContainer/DashboardCardConta
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import MyStuffContainer from '../MyStuffContainer/MyStuffContainer';
-import { fetchApi } from '../Api/ApiCalls'
+import { fetchApi, addNewRequest } from '../Api/ApiCalls'
 
 import Footer from '../Footer/Footer';
 
@@ -26,7 +26,6 @@ class App extends Component {
     this.setState({ communityPage: !this.state.communityPage })
   }
   
-  
   componentDidMount = () => { 
     fetchApi()
     .then(data => {
@@ -36,6 +35,11 @@ class App extends Component {
       this.sortUserRequests()
       this.sortLoaned()
     })
+  }
+
+  postNewRequest = (data) => {
+    console.log('request object', data)
+    addNewRequest(data);
   }
   
   sortCommunityRequests = () => {
@@ -68,7 +72,11 @@ class App extends Component {
           <Route path='/my-stuff' element={
             <div className='requests-page'>
               <h2 className='request-title'>My Stuff</h2>
-              <MyStuffContainer userRequests={this.state.userRequests} userLoaned={this.state.userLoaned}/>
+              <MyStuffContainer 
+                userRequests={this.state.userRequests} 
+                userLoaned={this.state.userLoaned}
+                postNewRequest={this.postNewRequest}
+              />
             </div>
           }
           />
