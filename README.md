@@ -15,6 +15,7 @@
 - [Specs](#Specs)
 
 ## Abstract
+Have you ever needed a drill but not willing to buy one because you'll only use it once?  Introducing the Sugar app!  With Sugar you can request to borrow anything from tools to sporting goods.  Users of the app can see your request and loan it to you if they have it.  You can also browse other requests from the community.
 
 ## Technologies
 ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) ![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)  
@@ -23,10 +24,17 @@
 ## Illustrations
 
 ## Wins
+- Successfully integreated Circle CI and deployed to Heroku
+- Learned and implemented Redux
 
 ## Challenges
+- Scheduling was sometimes difficult with 5 member team
+- Trying to add too many features
 
 ## Additions
+- User login
+- Select different communities
+- Private direct message feature
 
 ## Contributors
 - David Tran  
