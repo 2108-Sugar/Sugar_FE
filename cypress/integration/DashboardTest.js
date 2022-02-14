@@ -1,4 +1,5 @@
-// import cypress = require("cypress")
+import { before } from "cypress/types/lodash"
+
 
 describe('Sugar dashboard test', () => {
   before(() => {
