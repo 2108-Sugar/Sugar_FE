@@ -19,7 +19,6 @@ const addNewRequest = (request) => {
   })
     .then(response => {
       unparsedResponse = response;
-      console.log('stringigied', JSON.stringify(request))
       return response.json();
     })
     .then(parsedResponse => {
@@ -30,4 +29,26 @@ const addNewRequest = (request) => {
     });
 }
 
-export {fetchApi, addNewRequest}
+const updateRequest = (request, requestId) => {
+  let unparsedResponse;
+  return fetch(`http://lendsugar.com/api/v1/users/1/communities/1/requests/${requestId}`, {
+    method: 'PATCH',
+    body: JSON.stringify(request),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      unparsedResponse = response;
+      console.log('stringified', JSON.stringify(request))
+      return response.json();
+    })
+    .then(parsedResponse => {
+      if (!unparsedResponse.ok) {
+        throw new Error(`${unparsedResponse.status} ${parsedResponse.error}`);
+      }
+      return parsedResponse;
+    });
+}
+
+export {fetchApi, addNewRequest, updateRequest}
