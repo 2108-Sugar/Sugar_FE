@@ -40,7 +40,6 @@ const updateRequest = (request, requestId) => {
   })
     .then(response => {
       unparsedResponse = response;
-      console.log('stringified', JSON.stringify(request))
       return response.json();
     })
     .then(parsedResponse => {
@@ -55,14 +54,12 @@ const removeRequest = (requestId) => {
   let unparsedResponse;
   return fetch(`http://lendsugar.com/api/v1/users/1/communities/1/requests/${requestId}`, {
     method: 'DELETE',
-    body: JSON.stringify(requestId),
     headers: {
       'Content-Type': 'application/json'
     }
   })
     .then(response => {
       unparsedResponse = response;
-      console.log('stringified', JSON.stringify(requestId))
       return response.json();
     })
     .then(parsedResponse => {
