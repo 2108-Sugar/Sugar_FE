@@ -1,4 +1,5 @@
-// import cypress = require("cypress")
+// import { before } from "cypress/types/lodash"
+
 
 describe('Sugar dashboard test', () => {
   before(() => {
@@ -20,6 +21,14 @@ describe('Sugar dashboard test', () => {
       .and('contain', 'Billy')
       .and('contain', 'Didi')
 
+  })
+
+  it('should see a footer', () => {
+    cy.get('.footer-container')
+    .children()
+      .should('contain', 'Contact Us')
+      .and('contain', 'Billy')
+      .and('contain', 'Didi')
   })
 
 
