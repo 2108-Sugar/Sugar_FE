@@ -6,7 +6,7 @@ class RequestForm extends Component {
     this.state = {
       startDate: new Date(),
       itemName: '',
-      category: '',
+      category: 'tools',
       details: '',
       returnDate: '',
     };
@@ -41,6 +41,7 @@ class RequestForm extends Component {
         community_id: 1
     }
     this.props.postNewRequest(newRequest);
+    this.props.toggleRequestForm();
   }
 
   render() {
@@ -51,8 +52,8 @@ class RequestForm extends Component {
         <input className='item-name' onChange={event => this.setState({itemName: event.target.value})} />
         <p>Select a category</p>
         <select name='Choose category' placeholder='Please select a category' id='categoryList' onChange={event => this.setState({category: event.target.value})}>
-          <option value="Tools">Tools</option>
-          <option value="Sporting goods">Sporting goods</option>
+          <option value="tools">Tools</option>
+          <option value="sporting goods">Sporting goods</option>
           <option value="kitchen">Kitchen</option>
           <option value="automotive">Automotive</option>
         </select>
@@ -62,7 +63,7 @@ class RequestForm extends Component {
         <input className='date-needed' placeholder='YYYY-MM-DD' onChange={event => this.setState({ returnDate: event.target.value})} />
         <p >Request details:</p>
         <input className='item-details' onChange={event => this.setState({details: event.target.value})}/>
-        <button className='request-btn' onClick={this.createRequestObject}>Request</button>
+        <button className='request-btn' onClick={this.createRequestObject} >Request</button>
         <button className='cancel-btn' onClick={this.props.toggleRequestForm}>Cancel</button>
       </div>
     )
