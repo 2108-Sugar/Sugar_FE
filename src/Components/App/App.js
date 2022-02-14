@@ -4,7 +4,7 @@ import DashboardCardContainer from '../DashboardCardContainer/DashboardCardConta
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import MyStuffContainer from '../MyStuffContainer/MyStuffContainer';
-import { fetchApi, addNewRequest, updateRequest } from '../Api/ApiCalls'
+import { fetchApi, addNewRequest, updateRequest, removeRequest } from '../Api/ApiCalls'
 
 import Footer from '../Footer/Footer';
 
@@ -44,6 +44,10 @@ class App extends Component {
   updateRequest =(data, requestId) => {
     updateRequest(data, requestId)
   }
+
+  deleteRequest = (requestId) => {
+    removeRequest(requestId)
+  }
   
   sortCommunityRequests = () => {
     const communityReq = this.state.requests.data.filter(request => request.attributes.requested_by_id !== 1)
@@ -79,6 +83,7 @@ class App extends Component {
                 userRequests={this.state.userRequests} 
                 userLoaned={this.state.userLoaned}
                 postNewRequest={this.postNewRequest}
+                deleteRequest={this.deleteRequest}
               />
             </div>
           }

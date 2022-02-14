@@ -6,7 +6,7 @@ import names from '../SampleData/Names';
 import { useState } from 'react';
 import RequestForm from '../RequestForm/RequestForm';
 
-const MyStuffContainer = ({ userLoaned, userRequests, postNewRequest }) => {
+const MyStuffContainer = ({ userLoaned, userRequests, postNewRequest, deleteRequest }) => {
 
   const [requestPage, setRequestPage] = useState(false);
 
@@ -28,6 +28,8 @@ const MyStuffContainer = ({ userLoaned, userRequests, postNewRequest }) => {
                 borrowDate={loan.attributes.borrow_date}
                 itemName={loan.attributes.name}
                 returnDate={loan.attributes.return_date}
+                deleteRequest={deleteRequest}
+                requestId={loan.id}
               />
             )
           })}
