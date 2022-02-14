@@ -2,8 +2,17 @@ import React from 'react';
 import './DashboardCard.css';
 import pin from '../Images/pin2.png'
 import tools from '../Images/tools-icon.png'
+import numbers from '../SampleData/Numbers';
 
-const DashboardCard = ({ requesterName, category, itemName, requestDetails, borrowDate, post_date }) => {
+const DashboardCard = ({ requesterName, category, itemName, requestDetails, borrowDate, post_date, updateRequest, requestId }) => {
+
+  const createLoan = () => {
+    updateRequest({
+      lender_id: 1,
+      requested_by_id: numbers[requesterName],
+      status: 'assigned'
+    }, requestId)
+  }
 
   return (
     <div className='request-card'>
@@ -26,7 +35,7 @@ const DashboardCard = ({ requesterName, category, itemName, requestDetails, borr
         <p className='request-details'>{requestDetails}</p>
       </div>
       <div className='loan-button-section'>
-        <button className='loan-button'>Loan Item</button>
+        <button className='loan-button' onClick={createLoan}>Loan Item</button>
       </div>
     </div>
     )

@@ -4,7 +4,7 @@ import DashboardCardContainer from '../DashboardCardContainer/DashboardCardConta
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import MyStuffContainer from '../MyStuffContainer/MyStuffContainer';
-import { fetchApi } from '../Api/ApiCalls'
+import { fetchApi, addNewRequest, updateRequest, removeRequest } from '../Api/ApiCalls'
 
 import Footer from '../Footer/Footer';
 
@@ -26,7 +26,6 @@ class App extends Component {
     this.setState({ communityPage: !this.state.communityPage })
   }
   
-  
   componentDidMount = () => { 
     fetchApi()
     .then(data => {
@@ -36,6 +35,18 @@ class App extends Component {
       this.sortUserRequests()
       this.sortLoaned()
     })
+  }
+
+  postNewRequest = (data) => {
+    addNewRequest(data);
+  }
+
+  updateRequest =(data, requestId) => {
+    updateRequest(data, requestId)
+  }
+
+  deleteRequest = (requestId) => {
+    removeRequest(requestId)
   }
   
   sortCommunityRequests = () => {
@@ -61,14 +72,19 @@ class App extends Component {
           <Route path='/' element={
             <div className='community-page'>
               <h2 className='request-title'>Requests from Frey Apartments</h2>
-              {!this.state.loading && <DashboardCardContainer requests={this.state.requests} />}
+              {!this.state.loading && <DashboardCardContainer requests={this.state.requests} updateRequest={this.updateRequest}/>}
             </div>
           }
           />
           <Route path='/my-stuff' element={
             <div className='requests-page'>
               <h2 className='request-title'>My Stuff</h2>
-              <MyStuffContainer userRequests={this.state.userRequests} userLoaned={this.state.userLoaned}/>
+              <MyStuffContainer 
+                userRequests={this.state.userRequests} 
+                userLoaned={this.state.userLoaned}
+                postNewRequest={this.postNewRequest}
+                deleteRequest={this.deleteRequest}
+              />
             </div>
           }
           />

@@ -4,7 +4,7 @@ import './DashboardCardContainer.css'
 import names from '../SampleData/Names'
 import catIcon from '../SampleData/Category'
 
-const DashboardCardContainer = ({requests}) => {
+const DashboardCardContainer = ({ requests, updateRequest}) => {
   return (
     <div className='dashboard-container'>
       {requests.data.map(request => {
@@ -16,6 +16,8 @@ const DashboardCardContainer = ({requests}) => {
             itemName={request.attributes.name}
             requestDetails={request.attributes.details}
             borrowDate={request.attributes.borrow_date}
+            requestId={request.id}
+            updateRequest={updateRequest}
             />
         )
       })}

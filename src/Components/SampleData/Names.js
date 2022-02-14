@@ -8,4 +8,4 @@ const names = {
   7: 'Didi'
 }
 
-export default names
+export default names;
