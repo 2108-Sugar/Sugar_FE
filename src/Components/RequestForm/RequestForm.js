@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './RequestForm.css';
 
 class RequestForm extends Component {
   constructor (props) {
@@ -61,10 +62,12 @@ class RequestForm extends Component {
         <input className='date-needed' placeholder='YYYY-MM-DD' onChange={event => this.setState({ startDate: event.target.value})} />
         <p>What day will you return it on?</p>
         <input className='date-needed' placeholder='YYYY-MM-DD' onChange={event => this.setState({ returnDate: event.target.value})} />
-        <p >Request details:</p>
+        <p >Message for loaner:</p>
         <input className='item-details' onChange={event => this.setState({details: event.target.value})}/>
-        <button className='request-btn' onClick={this.createRequestObject} >Request</button>
-        <button className='cancel-btn' onClick={this.props.toggleRequestForm}>Cancel</button>
+        <div className='bottom-row'>
+          <button className='request-btn' onClick={this.createRequestObject} >Request</button>
+          <button className='cancel-btn' onClick={this.props.toggleRequestForm}>Cancel</button>
+        </div>
       </div>
     )
   }

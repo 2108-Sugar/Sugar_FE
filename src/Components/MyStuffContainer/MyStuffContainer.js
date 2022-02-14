@@ -16,7 +16,9 @@ const MyStuffContainer = ({ userLoaned, userRequests, postNewRequest, deleteRequ
 
   return (
     <main className='my-stuff-page'>
-      {!requestPage && <button onClick={toggleRequestForm}>Make a new request</button>}
+      <div className='button-container'>
+        {!requestPage && <button className='new-request' onClick={toggleRequestForm}>Make a new request</button>}
+      </div>
       {requestPage && <RequestForm toggleRequestForm={toggleRequestForm} postNewRequest={postNewRequest} />}
       <div className='column-container'>
         <div className='loaned-items-container'>
