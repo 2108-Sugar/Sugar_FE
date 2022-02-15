@@ -7,7 +7,10 @@ const BorrowedCards = ({ loaner, itemName, borrowDate, returnDate, createdAt }) 
 
   {loaner} ?
      <div className='borrow-card'>
-        <p className='borrow-from'>Borrowed from: {loaner}</p>
+        {loaner ?
+          <p className='borrow-from'>Borrowed from: {loaner}</p>
+        :
+          <p className='borrow-from'>Pending request:</p>}
         <p className='borrow-item-name'>{itemName}</p>
         <div className='bottom-row'>
           <p className='borrow-on-date'>Borrowed on: {borrowDate}</p>

@@ -12,7 +12,7 @@ const LoanCards = ({ borrower, borrowDate, itemName, returnDate, deleteRequest, 
           <p className='loaned-item-name'>{itemName}</p>
           <p className='return-date'>Return Date: {returnDate}</p>
         </div>
-          <button className='item-return-btn' onClick={() => deleteRequest(requestId)}>Item Returned</button>
+          <button className='item-return-btn' onClick={() => deleteRequest(requestId)} >Item Returned</button>
       </div>
   )
 }

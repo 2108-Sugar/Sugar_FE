@@ -21,7 +21,10 @@ class App extends Component {
     };
   }
 
-  
+   refreshPage =() => {
+    window.location.reload(false);
+  }
+
   togglePage = () => {
     this.setState({ communityPage: !this.state.communityPage })
   }
@@ -39,14 +42,17 @@ class App extends Component {
 
   postNewRequest = (data) => {
     addNewRequest(data);
+    this.refreshPage()
   }
 
   updateRequest =(data, requestId) => {
     updateRequest(data, requestId)
+    this.refreshPage()
   }
 
   deleteRequest = (requestId) => {
     removeRequest(requestId)
+    this.refreshPage()
   }
   
   sortCommunityRequests = () => {
