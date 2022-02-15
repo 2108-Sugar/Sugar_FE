@@ -4,7 +4,6 @@ import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-
 const Footer = () => {
   return (
     <div className='footer-container'>

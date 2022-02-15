@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import DashboardCardContainer from '../DashboardCardContainer/DashboardCardContainer';
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import MyStuffContainer from '../MyStuffContainer/MyStuffContainer';
 import { fetchApi, addNewRequest, updateRequest, removeRequest } from '../Api/ApiCalls'
-
-import Footer from '../Footer/Footer';
 
 class App extends Component {
   constructor() {

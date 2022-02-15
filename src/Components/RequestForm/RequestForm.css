@@ -37,6 +37,7 @@
   text-align: center;
   margin: 5px;
 }
+
 .cancel-btn {
   margin-top: 16px;
   width: 150px;
@@ -79,7 +80,6 @@ option {
   width: 215px;
   height: 36px;
   font-size: 20px;
-
 }
 
 .item-details {

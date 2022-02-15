@@ -24,7 +24,6 @@ const MyStuffContainer = ({ userLoaned, userRequests, postNewRequest, deleteRequ
         <div className='loaned-items-container'>
           <p className='loaned-items-title'>Loaned Items</p>
           {userLoaned.map(loan => {
-            console.log(loan.id)
             return (
               <LoanCards 
                 borrower={names[loan.attributes.requested_by_id]}
