@@ -1,3 +1,4 @@
+
 .request-form {
   display: flex;
   flex-direction: column;
@@ -17,22 +18,28 @@
   align-items: center;
 }
 
+.button-bottom-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .request-btn {
-    margin-top: 16px;
-   width: 150px;
-    height: 40px;
-    border: none;
-    background-color: #1DCDAA;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin: 5px;
+  margin-top: 16px;
+  width: 150px;
+  height: 40px;
+  border: none;
+  background-color: #1DCDAA;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px;
 }
 .cancel-btn {
   margin-top: 16px;
- width: 150px;
+  width: 150px;
   height: 40px;
   border: none;
   background-color: #1DCDAA;
@@ -69,7 +76,7 @@ option {
 }
 
 .date-needed {
-  width: 144px;
+  width: 215px;
   height: 36px;
 }
 

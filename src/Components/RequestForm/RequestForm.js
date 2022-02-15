@@ -38,7 +38,7 @@ class RequestForm extends Component {
         status: "unassigned",
         borrow_date: this.state.startDate,
         return_date: this.state.returnDate,
-        requested_by_id: 1,
+        requested_by_id: 3,
         community_id: 1
     }
     this.props.postNewRequest(newRequest);
@@ -64,7 +64,7 @@ class RequestForm extends Component {
         <input className='date-needed' placeholder='YYYY-MM-DD' onChange={event => this.setState({ returnDate: event.target.value})} />
         <p >Message for loaner:</p>
         <input className='item-details' onChange={event => this.setState({details: event.target.value})}/>
-        <div className='bottom-row'>
+        <div className='btn-bottom-row'>
           <button className='request-btn' onClick={this.createRequestObject} >Request</button>
           <button className='cancel-btn' onClick={this.props.toggleRequestForm}>Cancel</button>
         </div>
