@@ -11,7 +11,9 @@
   font-size: 30px;
   font-weight: bold;
   justify-content: center;
-  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (max-width: 980px) {
