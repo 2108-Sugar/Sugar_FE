@@ -11,7 +11,7 @@ const DashboardCard = ({ requesterName, category, itemName, requestDetails, borr
       lender_id: 1,
       requested_by_id: numbers[requesterName],
       status: 'assigned'
-    }, requestId)
+    }, requestId);
   }
 
   return (

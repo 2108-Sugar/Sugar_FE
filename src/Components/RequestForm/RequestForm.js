@@ -5,14 +5,21 @@ class RequestForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      startDate: new Date(),
+      startDate: '',
       itemName: '',
       category: 'tools',
       details: '',
       returnDate: '',
+      error: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
+
+  handleError = () => {
+    if (this.state.itemName && this.state.details && this.state.returnDate && this.state.startDate) {
+      this.setState({ error: false })
+    }
   }
 
   handleChange(date) {
@@ -38,7 +45,7 @@ class RequestForm extends Component {
         status: "unassigned",
         borrow_date: this.state.startDate,
         return_date: this.state.returnDate,
-        requested_by_id: 3,
+        requested_by_id: 1,
         community_id: 1
     }
     this.props.postNewRequest(newRequest);
@@ -48,7 +55,7 @@ class RequestForm extends Component {
   render() {
     console.log(this.props)
     return (
-      <div className='request-form'>
+      <div onChange={() => this.handleError()} className='request-form'>
         <p>What do you need?</p>
         <input className='item-name' onChange={event => this.setState({itemName: event.target.value})} />
         <p>Select a category</p>
@@ -65,7 +72,11 @@ class RequestForm extends Component {
         <p >Message for loaner:</p>
         <input className='item-details' onChange={event => this.setState({details: event.target.value})}/>
         <div className='btn-bottom-row'>
-          <button className='request-btn' onClick={this.createRequestObject} >Request</button>
+          {!this.state.error ?
+            <button className='request-btn'  onClick={this.createRequestObject} >Request</button>
+          :
+          <p className='error'>Please fill out all fields</p>
+          }
           <button className='cancel-btn' onClick={this.props.toggleRequestForm}>Cancel</button>
         </div>
       </div>
