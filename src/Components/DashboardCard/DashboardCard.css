@@ -1,7 +1,6 @@
 .request-card {
   border: 1px solid #272F51;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   width: 375px;
   height: 375px;
@@ -70,11 +69,9 @@ p {
   align-items: center
 }
 
-
 .details-section {
   height: 30%;
   margin: 5px;
-  
 }
 
 .request-details {
@@ -90,7 +87,6 @@ p {
 .name {
   font-size: 25px;
 }
-
 
 .item-needed {
   font-size: 25px;

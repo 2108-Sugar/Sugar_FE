@@ -30,11 +30,6 @@ class RequestForm extends Component {
 
   onFormSubmit(e) {
     e.preventDefault();
-    console.log('date', this.state.startDate)
-    console.log('name', this.state.itemName)
-    console.log('category', this.state.category)
-    console.log('details', this.state.details)
-    console.log('request', this.state.request)
   }
 
   createRequestObject = () => {
@@ -53,7 +48,6 @@ class RequestForm extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div onChange={() => this.handleError()} className='request-form'>
         <p>What do you need?</p>

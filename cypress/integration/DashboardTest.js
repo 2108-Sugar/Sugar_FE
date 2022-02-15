@@ -1,5 +1,4 @@
 
-
 describe('Sugar dashboard test', () => {
   before(() => {
     cy.visit('http://localhost:3000')
@@ -25,8 +24,4 @@ describe('Sugar dashboard test', () => {
       .and('contain', 'Billy')
       .and('contain', 'Didi')
   })
-
-
-
-
 })

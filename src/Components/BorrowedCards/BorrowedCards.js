@@ -3,10 +3,8 @@ import './BorrowedCards.css'
 
 const BorrowedCards = ({ loaner, itemName, borrowDate, returnDate, createdAt }) => {
   return (
-  
-
-  {loaner} ?
-     <div className='borrow-card'>
+    {loaner} ?
+      <div className='borrow-card'>
         {loaner ?
           <p className='borrow-from'>Borrowed from: {loaner}</p>
         :
@@ -17,12 +15,11 @@ const BorrowedCards = ({ loaner, itemName, borrowDate, returnDate, createdAt }) 
           <p className='return-date'>Return on: {returnDate}</p>
         </div>
       </div>
-      :
+    :
       <div className='borrow-card'>
         <p className='borrow-item-name'>{itemName}</p>
         <p>Requested on {createdAt}</p>
       </div>
-    
   )
 }
 

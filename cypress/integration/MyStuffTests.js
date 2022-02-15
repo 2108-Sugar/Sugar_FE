@@ -1,5 +1,4 @@
 
-
 describe('My Stuff dashboard tests', () => {
   before(() => {
     cy.visit('http://localhost:3000')
@@ -19,5 +18,4 @@ describe('My Stuff dashboard tests', () => {
       .should('contain', 'Loaned Items')
       .and('contain', 'Borrowed Items')
   })
-
 })
