@@ -19,4 +19,13 @@ describe('New Request test', ()=> {
     .get('.request-btn').click()
   })
 
+  it('should check if the request was posted', () => {
+    cy.get('.nav-button').click().click()
+    cy.get('.center-card')
+    .children()
+      .should('contain', 'Tony')
+      .and('contain', 'drill')
+      .and('contain', 'Need to build a treehouse')
+  })
+
 })

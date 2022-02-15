@@ -45,7 +45,7 @@ class RequestForm extends Component {
         status: "unassigned",
         borrow_date: this.state.startDate,
         return_date: this.state.returnDate,
-        requested_by_id: 1,
+        requested_by_id: 2,
         community_id: 1
     }
     this.props.postNewRequest(newRequest);
