@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import DashboardCard from '../DashboardCard/DashboardCard';
-import './DashboardCardContainer.css'
-import names from '../SampleData/Names'
-import catIcon from '../SampleData/Category'
+import './DashboardCardContainer.css';
+import names from '../SampleData/Names';
+import catIcon from '../SampleData/Category';
+import { RequestContext } from '../../Context/RequestContext';
 
-const DashboardCardContainer = ({ requests, updateRequest}) => {
+const DashboardCardContainer = ({ updateRequest }) => {
+
+  const { communityRequests } =useContext(RequestContext);
+  
   return (
     <div className='dashboard-container'>
-      {requests.data.map(request => {
+      {communityRequests.map(request => {
         return (
           <DashboardCard
             post_date={request.attributes.created_at}
@@ -18,6 +22,7 @@ const DashboardCardContainer = ({ requests, updateRequest}) => {
             borrowDate={request.attributes.borrow_date}
             requestId={request.id}
             updateRequest={updateRequest}
+            key={request.id}
             />
         )
       })}
