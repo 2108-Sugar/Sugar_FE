@@ -7,7 +7,7 @@ import catIcon from '../SampleData/Category'
 const DashboardCardContainer = ({ requests, updateRequest}) => {
   return (
     <div className='dashboard-container'>
-      {requests.data.map(request => {
+      {requests.map(request => {
         return (
           <DashboardCard
             post_date={request.attributes.created_at}
@@ -18,6 +18,7 @@ const DashboardCardContainer = ({ requests, updateRequest}) => {
             borrowDate={request.attributes.borrow_date}
             requestId={request.id}
             updateRequest={updateRequest}
+            key={request.id}
             />
         )
       })}
