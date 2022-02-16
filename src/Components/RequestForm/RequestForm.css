@@ -37,6 +37,7 @@
   text-align: center;
   margin: 5px;
 }
+
 .cancel-btn {
   margin-top: 16px;
   width: 150px;
@@ -75,9 +76,10 @@ option {
   font-size: 12px;
 }
 
-.date-needed {
+.date-needed, .date-return {
   width: 215px;
   height: 36px;
+  font-size: 20px;
 }
 
 .item-details {

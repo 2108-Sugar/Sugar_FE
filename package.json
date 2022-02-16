@@ -50,6 +50,7 @@
     "@cypress/code-coverage": "^3.9.12",
     "@cypress/instrument-cra": "^1.4.0",
     "cypress": "^9.2.1",
+    "eslint-plugin-cypress": "^2.12.1",
     "start-server-and-test": "^1.14.0"
   }
 }
