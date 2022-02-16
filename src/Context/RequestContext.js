@@ -1,13 +1,15 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 const RequestContext = createContext()
 
-const RequestProvider = (props) => {
+const RequestProvider = props => {
   const [requests, setRequests] = useState([]);
   const [communityRequests, setCommunityRequests] = useState([]);
   const [userRequests, setUserRequests] = useState([]);
   const [userLoaned, setUserLoaned] = useState([]);
 
+
+  
   return ( 
     <RequestContext.Provider value={{ requests, communityRequests, userRequests, userLoaned, setRequests, setCommunityRequests, setUserRequests, setUserLoaned }}>
       {props.children}
@@ -15,5 +17,4 @@ const RequestProvider = (props) => {
   )
 }
 
-export { RequestContext, RequestProvider }
-
+export { RequestContext, RequestProvider } 

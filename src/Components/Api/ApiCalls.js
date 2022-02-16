@@ -29,7 +29,7 @@ const addNewRequest = (request) => {
     });
 }
 
-const updateRequest = (request, requestId) => {
+const postRequest = (request, requestId) => {
   let unparsedResponse;
   return fetch(`http://lendsugar.com/api/v1/users/1/communities/1/requests/${requestId}`, {
     method: 'PATCH',
@@ -70,4 +70,4 @@ const removeRequest = (requestId) => {
     });
 }
 
-export {fetchApi, addNewRequest, updateRequest, removeRequest}
+export {fetchApi, addNewRequest, postRequest, removeRequest}

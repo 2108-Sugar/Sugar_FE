@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useContext, useState} from 'react';
 import './MyStuffContainer.css'
 import LoanCards from '../LoanCards/LoanCards';
 import BorrowedCards from '../BorrowedCards/BorrowedCards';
 import names from '../SampleData/Names';
-import { useState, useContext } from 'react';
 import RequestForm from '../RequestForm/RequestForm';
 import { RequestContext } from '../../Context/RequestContext';
 
 const MyStuffContainer = ({ postNewRequest, deleteRequest }) => {
 
-  const { userLoaned, userRequests } = useContext(RequestContext);
-  const [requestPage, setRequestPage] = useState(false);
+  const { userLoaned, userRequests } = useContext(RequestContext)
+  const [requestPage, setRequestPage] = useState(false)
 
   const toggleRequestForm = () => {
     setRequestPage(!requestPage)
