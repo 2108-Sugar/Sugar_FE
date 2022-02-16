@@ -32,10 +32,11 @@ class App extends Component {
     fetchApi()
     .then(data => {
       const fetchedReq = data
-      this.setState({ requests: fetchedReq, loading: false})
+      this.setState({ requests: fetchedReq})
       this.sortCommunityRequests()
       this.sortUserRequests()
       this.sortLoaned()
+      this.setState({ loading: false })
     })
   }
 
@@ -77,7 +78,7 @@ class App extends Component {
           <Route path='/' element={
             <div className='community-page'>
               <h2 className='request-title'>Requests from Frey Apartments</h2>
-              {!this.state.loading && <DashboardCardContainer requests={this.state.requests} updateRequest={this.updateRequest}/>}
+              {!this.state.loading && <DashboardCardContainer requests={this.state.communityRequests} updateRequest={this.updateRequest}/>}
             </div>
           }
           />
