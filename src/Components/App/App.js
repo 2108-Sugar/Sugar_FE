@@ -5,7 +5,7 @@ import DashboardCardContainer from '../DashboardCardContainer/DashboardCardConta
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import MyStuffContainer from '../MyStuffContainer/MyStuffContainer';
-import { RequestContext, RequestProvider } from '../../Context/RequestContext';
+import { RequestContext } from '../../Context/RequestContext';
 import { addNewRequest, postRequest, removeRequest, fetchApi } from '../Api/ApiCalls';
 
 const App = () => {
@@ -15,7 +15,6 @@ const App = () => {
   useEffect(() => {
     fetchApi()
     .then(data => setRequests(data.data))
-
   }, [])
   
   useEffect(() => {
@@ -53,7 +52,6 @@ const App = () => {
     }
     
   return (
-
       <main className='App'>
         <Header communityPage={communityPage} togglePage={togglePage}/>
         <Routes>
@@ -77,7 +75,6 @@ const App = () => {
         </Routes>
         <Footer />
       </main>
-
   )
 }
 
