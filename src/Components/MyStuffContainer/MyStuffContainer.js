@@ -3,11 +3,13 @@ import './MyStuffContainer.css'
 import LoanCards from '../LoanCards/LoanCards';
 import BorrowedCards from '../BorrowedCards/BorrowedCards';
 import names from '../SampleData/Names';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import RequestForm from '../RequestForm/RequestForm';
+import { RequestContext } from '../../Context/RequestContext';
 
-const MyStuffContainer = ({ userLoaned, userRequests, postNewRequest, deleteRequest }) => {
+const MyStuffContainer = ({ postNewRequest, deleteRequest }) => {
 
+  const { userLoaned, userRequests } = useContext(RequestContext);
   const [requestPage, setRequestPage] = useState(false);
 
   const toggleRequestForm = () => {
