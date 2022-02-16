@@ -8,7 +8,6 @@ import { RequestContext } from '../../Context/RequestContext';
 const DashboardCardContainer = ({ updateRequest }) => {
 
   const { communityRequests } = useContext(RequestContext)
-  console.log('123', communityRequests)
 
   return (
     <div className='dashboard-container'>

@@ -8,8 +8,6 @@ const RequestProvider = props => {
   const [userRequests, setUserRequests] = useState([]);
   const [userLoaned, setUserLoaned] = useState([]);
 
-
-  
   return ( 
     <RequestContext.Provider value={{ requests, communityRequests, userRequests, userLoaned, setRequests, setCommunityRequests, setUserRequests, setUserLoaned }}>
       {props.children}
