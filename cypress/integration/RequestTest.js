@@ -20,6 +20,7 @@ describe('New Request test', ()=> {
   })
 
   it('should check if the request was posted', () => {
+
     cy.get('.borrowed-items-container')
     .children()
     .should('contain', 'drill')
