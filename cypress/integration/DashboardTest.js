@@ -13,7 +13,7 @@ describe('Sugar dashboard test', () => {
   it('should display all community requests', () => {
     cy.get('.dashboard-container')
     .children()
-      .should('contain', 'David')
+      .should('contain', 'Rick')
       .and('contain', 'Tony')
   })
 
