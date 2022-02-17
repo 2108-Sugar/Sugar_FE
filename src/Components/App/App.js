@@ -1,84 +1,64 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import DashboardCardContainer from '../DashboardCardContainer/DashboardCardContainer';
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import MyStuffContainer from '../MyStuffContainer/MyStuffContainer';
-import { fetchApi, addNewRequest, updateRequest, removeRequest } from '../Api/ApiCalls'
+import { RequestContext } from '../../Context/RequestContext';
+import { addNewRequest, postRequest, removeRequest, fetchApi } from '../Api/ApiCalls';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      requests: [],
-      communityPage: false,
-      loading: true,
-      communityRequests: [],
-      userRequests: [],
-      userLoaned: []
-    };
-  }
+const App = () => {
+  const { setRequests, setCommunityRequests, setUserRequests, setUserLoaned, requests } = useContext(RequestContext);
+  const [loading, setLoading] = useState(true);
 
-   refreshPage =() => {
-    window.location.reload(false);
-  }
-
-  togglePage = () => {
-    this.setState({ communityPage: !this.state.communityPage })
-  }
-  
-  componentDidMount = () => { 
+  useEffect(() => {
     fetchApi()
-    .then(data => {
-      const fetchedReq = data
-      this.setState({ requests: fetchedReq})
-      this.sortCommunityRequests()
-      this.sortUserRequests()
-      this.sortLoaned()
-      this.setState({ loading: false })
-    })
-  }
-
-  postNewRequest = (data) => {
-    addNewRequest(data);
-    this.refreshPage()
-  }
-
-  updateRequest =(data, requestId) => {
-    updateRequest(data, requestId)
-    this.refreshPage()
-  }
-
-  deleteRequest = (requestId) => {
-    removeRequest(requestId)
-    this.refreshPage()
-  }
+    .then(data => setRequests(data.data))
+  }, [])
   
-  sortCommunityRequests = () => {
-    const communityReq = this.state.requests.data.filter(request => request.attributes.requested_by_id !== 1)
-    this.setState({communityRequests: communityReq})
-  }
+  useEffect(() => {
+    setCommunityRequests(requests.filter(request => request.attributes.requested_by_id !== 1))
+    setUserRequests(requests.filter(request => request.attributes.requested_by_id === 1))
+    setUserLoaned(requests.filter(request => request.attributes.lender_id === 1))
+    setLoading(false)
+  }, [requests])
 
-  sortUserRequests = () => {
-    const userReq = this.state.requests.data.filter(request => request.attributes.requested_by_id === 1)
-    this.setState({userRequests: userReq})
-  }
 
-  sortLoaned = () => {
-    const userLoan = this.state.requests.data.filter(request => request.attributes.lender_id === 1)
-    this.setState({userLoaned: userLoan})
-  }
+  const [communityPage, setCommunityPage] = useState(false);
+  
+  const refreshPage = () => {
+      window.location.reload(false);
+    }
 
-  render = () => {
-    return (
+  const togglePage = () => {
+      setCommunityPage(!communityPage)
+    }
+
+
+  const postNewRequest = (data) => {
+      addNewRequest(data);
+      refreshPage()
+    }
+
+  const updateRequest =(data, requestId) => {
+      postRequest(data, requestId)
+      refreshPage()
+    }
+
+  const deleteRequest = (requestId) => {
+      removeRequest(requestId)
+      refreshPage()
+    }
+    
+  return (
       <main className='App'>
-        <Header communityPage={this.state.communityPage} togglePage={this.togglePage}/>
+        <Header communityPage={communityPage} togglePage={togglePage}/>
         <Routes>
           <Route path='/' element={
             <div className='community-page'>
               <h2 className='request-title'>Requests from Frey Apartments</h2>
-              {!this.state.loading && <DashboardCardContainer requests={this.state.communityRequests} updateRequest={this.updateRequest}/>}
+              {!loading && <DashboardCardContainer updateRequest={updateRequest}/>}
             </div>
           }
           />
@@ -86,10 +66,8 @@ class App extends Component {
             <div className='requests-page'>
               <h2 className='request-title'>My Stuff</h2>
               <MyStuffContainer 
-                userRequests={this.state.userRequests} 
-                userLoaned={this.state.userLoaned}
-                postNewRequest={this.postNewRequest}
-                deleteRequest={this.deleteRequest}
+                postNewRequest={postNewRequest}
+                deleteRequest={deleteRequest}
               />
             </div>
           }
@@ -97,8 +75,7 @@ class App extends Component {
         </Routes>
         <Footer />
       </main>
-    )
-  }
+  )
 }
 
 export default App;
